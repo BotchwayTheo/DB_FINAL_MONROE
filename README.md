@@ -19,7 +19,6 @@ To set up the database:
 2. Execute the `sql/sample_data.sql` file to populate the tables with sample data.
 3. Use the `sql/reset.sql` file if you need to clear the database and start over.
 
-For detailed setup instructions, refer to the `SETUP.md` file in the `docs` directory.
 
 ## **Required SQL Files**
 ### **1. sql/schema.sql**
