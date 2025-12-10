@@ -86,3 +86,42 @@ FROM REVIEW
 GROUP BY product_id
 ORDER BY total_reviews DESC;
 
+
+Explanation of ds_queries.sql
+The DS_QUERIES.sql file contains a series of SQL views designed to extract meaningful insights from the data in the Product Review & Rating Platform. These views facilitate data analysis and reporting.
+
+Average Rating per Product:
+
+Calculates the average rating for each product, providing insight into overall customer satisfaction.
+Customers with Multiple Reviews:
+
+Identifies customers who have submitted more than one review, helping to understand customer engagement and loyalty.
+High Rated Products:
+
+Lists products with an average rating above a certain threshold (3.5), highlighting top-performing items.
+Most Active Reviewers:
+
+Counts the total reviews submitted by each user, identifying the most engaged reviewers on the platform.
+Product Average Ratings:
+
+Provides a list of products along with their average ratings, facilitating quick access to product performance metrics.
+Product Review Counts:
+
+Counts the total number of reviews for each product, useful for understanding product popularity.
+Products with No Reviews:
+
+Identifies products that have not received any reviews, highlighting areas for potential marketing or engagement efforts.
+Review Counts by Category:
+
+Aggregates review counts by product category, providing insights into which categories are most actively reviewed.
+Review Trends Over Time:
+
+Analyzes the volume of reviews submitted over time, helping to identify trends in customer feedback.
+Total Revenue from Reviews:
+
+Calculates the total revenue attributed to each user based on their reviews, providing insights into customer value.
+Total Reviews per Product:
+
+Counts the total reviews for each product, giving a quick overview of product engagement.
+Summary
+The DS_QUERIES.sql file is essential for data analysis and reporting, providing valuable insights into customer behavior, product performance, and overall platform engagement.
