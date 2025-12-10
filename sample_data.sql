@@ -227,3 +227,131 @@ INSERT INTO REVIEW (review_id, product_id, user_id, rating, review_text, helpful
 (88, 6, 48, 5, 'Galaxy A53 is great value.', 22, 27, '2023-03-29', TRUE, 'approved', NULL, NULL),
 (89, 7, 49, 5, 'Pixel 7 is amazing!', 30, 35, '2023-03-30', TRUE, 'approved', NULL, NULL),
 (90, 8, 50, 4, 'Pixel 6 is good.', 15, 20, '2023-03-31', TRUE, 'approved', NULL, NULL);
+
+
+Explanation of sample.sql
+The sample.sql file is designed to populate the database with initial sample data across various tables in the Product Review & Rating Platform. This data is crucial for testing, development, and demonstration purposes. Below is a breakdown of each section:
+
+Inserting Data into the VENDOR Table:
+
+This section populates the VENDOR table with sample vendors. Each entry includes a unique vendor_id and the vendor_name. This data is essential for associating products with their respective vendors.
+Copy
+INSERT INTO VENDOR (vendor_id, vendor_name) VALUES
+(1, 'Apple'),
+(2, 'Samsung'),
+(3, 'Google');
+Inserting Data into the CATEGORY Table:
+
+This part populates the CATEGORY table with sample categories. Each category has a unique category_id and a category_name. Categories help organize products and improve user navigation.
+Copy
+INSERT INTO CATEGORY (category_id, category_name) VALUES
+(1, 'Smartphone'),
+(2, 'Tablets'),
+(3, 'Electronic Accessories');
+Inserting Data into the PRODUCT Table:
+
+This section adds sample products to the PRODUCT table, linking each product to a specific vendor and category through their IDs. This includes product names and identifiers, which are crucial for product management and reviews.
+Copy
+INSERT INTO PRODUCT (product_id, product_name, category_id, vendor_id) VALUES
+(1, 'iPhone 14 Pro Max', 1, 1),
+(2, 'iPhone 13', 1, 1),
+(3, 'iPhone SE', 1, 1),
+(4, 'Galaxy S23', 1, 2),
+(5, 'Galaxy S22', 1, 2),
+(6, 'Galaxy A53', 1, 2),
+(7, 'Pixel 7', 1, 3),
+(8, 'Pixel 6', 1, 3),
+(9, 'Pixel 5', 1, 3),
+(10, 'iPad Pro', 2, 1),
+(11, 'iPad Air', 2, 1),
+(12, 'iPad Mini', 2, 1),
+(13, 'Galaxy Tab S8', 2, 2),
+(14, 'Galaxy Tab A8', 2, 2),
+(15, 'Pixel Tablet', 2, 3),
+(16, 'Nexus 9', 2, 3),
+(17, 'Pixel Slate', 2, 3),
+(18, 'Apple Watch Series 8', 3, 1),
+(19, 'AirPods Pro', 3, 1),
+(20, 'AirPods Max', 3, 1),
+(21, 'Galaxy Watch 5', 3, 2),
+(22, 'Galaxy Buds 2', 3, 2),
+(23, 'Pixel Buds Pro', 3, 3),
+(24, 'Fitbit Versa 3', 3, 3);
+Inserting Data into the PRODUCT_REVIEWER Table:
+
+This section populates the PRODUCT_REVIEWER table with sample users, including both customers and an admin. This data allows tracking of who wrote each review and facilitates user management.
+Copy
+INSERT INTO PRODUCT_REVIEWER (user_id, user_name, email, reviewer_type) VALUES
+(1, 'User_1', 'user1@example.com', 'CUSTOMER'),
+(2, 'User_2', 'user2@example.com', 'CUSTOMER'),
+(3, 'User_3', 'user3@example.com', 'CUSTOMER'),
+(4, 'User_4', 'user4@example.com', 'CUSTOMER'),
+(5, 'User_5', 'user5@example.com', 'CUSTOMER'),
+(6, 'User_6', 'user6@example.com', 'CUSTOMER'),
+(7, 'User_7', 'user7@example.com', 'CUSTOMER'),
+(8, 'User_8', 'user8@example.com', 'CUSTOMER'),
+(9, 'User_9', 'user9@example.com', 'CUSTOMER'),
+(10, 'Admin_1', 'admin1@example.com', 'ADMIN');
+Inserting Data into the ADMIN Table:
+
+This part adds an entry to the ADMIN table, indicating an admin user and their level. This data is important for managing the platform and moderating reviews.
+Copy
+INSERT INTO ADMIN (user_id, admin_level) VALUES
+(10, 'Super Admin');
+Inserting Data into the REVIEW Table:
+
+This section inserts sample reviews for the products, including ratings, review texts, helpful votes, and moderation status. This data allows for testing the review functionality and analytics.
+Copy
+INSERT INTO REVIEW (review_id, product_id, user_id, rating, review_text, helpful_votes, total_votes, review_date, verified_purchase, moderation_status, admin_response, response_date) VALUES
+(1, 1, 1, 5, 'Absolutely love this phone! Camera is amazing and battery lasts all day.', 25, 30, '2023-01-01', TRUE, 'approved', NULL, NULL),
+(2, 2, 2, 4, 'Great phone overall, but the fingerprint sensor could be better.', 18, 25, '2023-01-02', TRUE, 'approved', NULL, NULL),
+(3, 3, 3, 3, 'Decent phone for the price, but the software has some bugs.', 12, 20, '2023-01-03', FALSE, 'approved', NULL, NULL),
+(4, 4, 4, 5, 'Best tablet ever! The screen is stunning and very responsive.', 30, 35, '2023-01-04', TRUE, 'approved', NULL, NULL),
+(5, 5, 5, 2, 'Very disappointed. Phone stopped working after 2 weeks.', 5, 10, '2023-01-05', TRUE, 'approved', NULL, NULL),
+(6, 6, 6, 4, 'Good value for money. Camera quality is impressive.', 20, 25, '2023-01-06', FALSE, 'approved', NULL, NULL),
+(7, 7, 7, 5, 'Perfect in every way! Would definitely recommend to friends.', 35, 40, '2023-01-07', TRUE, 'approved', NULL, NULL),
+(8, 8, 8, 1, 'Worst phone I have ever owned. Constant freezing issues.', 2, 5, '2023-01-08', TRUE, 'approved', NULL, NULL),
+(9, 9, 9, 3, 'Average phone. Nothing special, but gets the job done.', 8, 15, '2023-01-09', FALSE, 'approved', NULL, NULL),
+(10, 10, 10, 4, 'Very good tablet. The display quality is exceptional.', 22, 30, '2023-01-10', TRUE, 'approved', NULL, NULL);
+Inserting Data into the TAG Table:
+
+This section adds sample tags that can be associated with products, improving the searchability and categorization of items.
+Copy
+INSERT INTO TAG (tag_id, tag_name) VALUES
+(1, 'Smartphone'),
+(2, 'Tablet'),
+(3, 'Electronic Accessories');
+Inserting Data into the PRODUCT_TAG Junction Table:
+
+This part inserts associations between products and their tags, enabling a many-to-many relationship that enhances product discovery.
+Copy
+INSERT INTO PRODUCT_TAG (product_id, tag_id) VALUES
+(1, 1),  -- iPhone 14 Pro Max is tagged as 'Smartphone'
+(2, 1),  -- iPhone 13 is tagged as 'Smartphone'
+(3, 1),  -- iPhone SE is tagged as 'Smartphone'
+(4, 1),  -- Galaxy S23 is tagged as 'Smartphone'
+(5, 1),  -- Galaxy S22 is tagged as 'Smartphone'
+(6, 1),  -- Galaxy A53 is tagged as 'Smartphone'
+(7, 1),  -- Pixel 7 is tagged as 'Smartphone'
+(8, 1),  -- Pixel 6 is tagged as 'Smartphone'
+(9, 1),  -- Pixel 5 is tagged as 'Smartphone'
+(10, 2), -- iPad Pro is tagged as 'Tablet'
+(11, 2), -- iPad Air is tagged as 'Tablet'
+(12, 2), -- iPad Mini is tagged as 'Tablet'
+(13, 2), -- Galaxy Tab S8 is tagged as 'Tablet'
+(14, 2), -- Galaxy Tab A8 is tagged as 'Tablet'
+(15, 2), -- Pixel Tablet is tagged as 'Tablet'
+(16, 2), -- Nexus 9 is tagged as 'Tablet'
+(17, 2), -- Pixel Slate is tagged as 'Tablet'
+(18, 3), -- Apple Watch Series 8 is tagged as 'Electronic Accessories'
+(19, 3), -- AirPods Pro is tagged as 'Electronic Accessories'
+(20, 3), -- AirPods Max is tagged as 'Electronic Accessories'
+(21, 3), -- Galaxy Watch 5 is tagged as 'Electronic Accessories'
+(22, 3), -- Galaxy Buds 2 is tagged as 'Electronic Accessories'
+(23, 3), -- Pixel Buds Pro is tagged as 'Electronic Accessories'
+(24, 3); -- Fitbit Versa 3 is tagged as 'Electronic Accessories'
+Inserting Additional Data:
+
+Additional entries for the PRODUCT_REVIEWER and REVIEW tables are included to ensure a diverse set of reviews and users, facilitating comprehensive testing.
+Summary
+The sample.sql file is critical for initializing the database with realistic data, allowing developers and testers to simulate user interactions and validate the functionality of the platform. It provides a foundation for testing various features, such as product reviews, user management, and data retrieval.
