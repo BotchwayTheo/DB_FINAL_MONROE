@@ -80,4 +80,40 @@ CREATE TABLE CUSTOMER (
     FOREIGN KEY (user_id) REFERENCES PRODUCT_REVIEWER(user_id)
 );
 
+Explanation of the Schema.sql
+VENDOR Table: Stores information about vendors, including their contact details.
 
+vendor_id: Unique identifier for each vendor.
+vendor_name: Name of the vendor.
+contact_email: Unique email address for the vendor.
+phone_number: Optional contact number.
+created_at: Timestamp for when the vendor was created.
+CATEGORY Table: Contains product categories.
+
+category_id: Unique identifier for each category.
+category_name: Name of the category.
+PRODUCT Table: Holds information about products.
+
+product_id: Unique identifier for each product.
+product_name: Name of the product.
+vendor_id: Foreign key referencing the vendor.
+category_id: Foreign key referencing the category.
+price: Price of the product.
+CUSTOMER Table: Contains customer information.
+
+customer_id: Unique identifier for each customer.
+user_id: Unique user identifier (could be linked to an authentication system).
+address, phone_number, date_of_birth, state: Customer details.
+REVIEW Table: Stores reviews for products.
+
+review_id: Unique identifier for each review.
+product_id: Foreign key referencing the product being reviewed.
+user_id: Foreign key referencing the customer who wrote the review.
+rating: Rating given by the customer (1 to 5).
+review_text: Text of the review.
+review_date: Date the review was created.
+moderation_status: Status of the review (pending, approved, rejected).
+PRODUCT_REVIEWER Table: (Optional) This table can track which customers have reviewed which products, if needed.
+
+Summary
+This schema.sql file sets up the foundational structure of your database, ensuring that all necessary relationships and constraints are in place for data integrity and efficient querying. If you need any modifications or additional details, feel free to ask!
